@@ -12,14 +12,8 @@ public class BasicExample {
         MortgageCalculatorAPIClient client = new MortgageCalculatorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Request body
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;amount&quot;, 570000);
-        parameters.put(&quot;rate&quot;, 6.8);
-        parameters.put(&quot;years&quot;, 30);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
