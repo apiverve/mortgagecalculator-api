@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:mortgagecalculator-api:1.1.13'
+    implementation 'com.github.apiverve:mortgagecalculator-api:1.1.14'
 }
 ```
 
@@ -47,8 +47,8 @@ MortgageCalculatorAPIClient client = new MortgageCalculatorAPIClient("YOUR_API_K
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("amount", 200000);
-    parameters.put("rate", 4.5);
+    parameters.put("amount", 570000);
+    parameters.put("rate", 6.8);
     parameters.put("years", 30);
     parameters.put("downpayment", 15000);
     parameters.put("annual_propertytax", 2000);
