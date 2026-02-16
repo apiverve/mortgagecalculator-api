@@ -44,7 +44,11 @@ from apiverve_mortgagecalculator.apiClient import MortgagecalculatorAPIClient
 # Initialize the client with your APIVerve API key
 api = MortgagecalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 570000, "rate": 6.8, "years": 30 }
+query = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "amount": 570000, "rate": 6.8, "years": 30 }
+query = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}
 ```
 
 ###### Simple Request
@@ -2300,7 +2308,11 @@ from apiverve_mortgagecalculator.apiClient import MortgagecalculatorAPIClient, M
 
 api = MortgagecalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 570000, "rate": 6.8, "years": 30 }
+query = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}
 
 try:
     result = api.execute(query)
@@ -2321,7 +2333,11 @@ from apiverve_mortgagecalculator.apiClient import MortgagecalculatorAPIClient, M
 
 api = MortgagecalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 570000, "rate": 6.8, "years": 30 }
+query = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}
 
 try:
     result = api.execute(query)
@@ -2355,7 +2371,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_mortgagecalculator.apiClient import MortgagecalculatorAPIClient, MortgagecalculatorAPIClientError
 
-query = { "amount": 570000, "rate": 6.8, "years": 30 }
+query = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}
 
 # Using context manager ensures proper cleanup
 with MortgagecalculatorAPIClient("[YOUR_API_KEY]") as api:
@@ -2381,7 +2401,11 @@ from apiverve_mortgagecalculator.apiClient import MortgagecalculatorAPIClient
 # Enable debug mode
 api = MortgagecalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "amount": 570000, "rate": 6.8, "years": 30 }
+query = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -2396,8 +2420,13 @@ from apiverve_mortgagecalculator.apiClient import MortgagecalculatorAPIClient
 
 api = MortgagecalculatorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}
+
 try:
-    query = { "amount": 570000, "rate": 6.8, "years": 30 }
     result = api.execute(query)
     print(result)
 finally:
