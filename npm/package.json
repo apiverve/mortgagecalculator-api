@@ -1,12 +1,12 @@
 {
   "name": "@apiverve/mortgagecalculator",
-  "version": "1.1.14",
+  "version": "1.2.0",
   "description": "Mortgage Calculator is a simple tool for calculating mortgage payments. It returns the monthly payment, total interest, and more.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "index.js",
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    ""
+    "mortgage calculator", "mortgage", "mortgage payments", "mortgage calculator api", "mortgage api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,15 +34,14 @@
   "bugs": {
     "url": "https://github.com/apiverve/mortgagecalculator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/mortgagecalculator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://mortgagecalculator.apiverve.com?utm_source=npm&utm_medium=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
     "dotenv": "^16.4.7"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "promise": "^8.3.0",
-    "axios": "1.13.2"
+    "axios": "1.13.2",
+    "form-data": "^4.0.1"
   }
 }
