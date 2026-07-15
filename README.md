@@ -1,14 +1,14 @@
-# [Mortgage Calculator API](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Mortgage Calculator API](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
 Mortgage Calculator is a simple tool for calculating mortgage payments. It returns the monthly payment, total interest, and more.
 
 The Mortgage Calculator API provides a simple, reliable way to integrate mortgage calculator functionality into your applications. Built for developers who need production-ready mortgage calculator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
-[![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
 **Available on:**
@@ -30,11 +30,19 @@ The Mortgage Calculator API provides a simple, reliable way to integrate mortgag
 ```javascript
 async function callMortgageCalculatorAPI() {
     try {
+        const requestBody = {
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+};
+
         const response = await fetch('https://api.apiverve.com/v1/mortgagecalculator', {
-            method: 'GET',
+            method: 'POST',
             headers: {
-                'x-api-key': 'YOUR_API_KEY_HERE'
-            }
+                'x-api-key': 'YOUR_API_KEY_HERE',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(requestBody)
         });
 
         const data = await response.json();
@@ -50,8 +58,14 @@ callMortgageCalculatorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/mortgagecalculator?param=value" \
-  -H "x-api-key: YOUR_API_KEY_HERE"
+curl -X POST "https://api.apiverve.com/v1/mortgagecalculator" \
+  -H "x-api-key: YOUR_API_KEY_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "amount": 570000,
+    "rate": 6.8,
+    "years": 30
+}'
 ```
 
 **Get your API key:** [https://apiverve.com](https://apiverve.com)
@@ -150,14 +164,14 @@ go get github.com/apiverve/mortgagecalculator-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
 
 ## Documentation
 
-- 🏠 **API Home:** [Mortgage Calculator API](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Mortgage Calculator API](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/mortgagecalculator](https://docs.apiverve.com/ref/mortgagecalculator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -169,7 +183,7 @@ go get github.com/apiverve/mortgagecalculator-api/go
 The Mortgage Calculator API is commonly used for:
 
 - **Web Applications** - Add mortgage calculator features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with mortgage calculator capabilities
 - **Data Pipelines** - Process and analyze data at scale
@@ -199,7 +213,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Mortgage Calculator API](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Mortgage Calculator API](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
