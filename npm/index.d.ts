@@ -4,38 +4,60 @@ declare module '@apiverve/mortgagecalculator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface mortgagecalculatorResponse {
     status: string;
     error: string | null;
     data: MortgageCalculatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface MortgageCalculatorData {
-      amount:               number;
-      downpayment:          number;
-      rate:                 number;
-      years:                number;
-      totalInterestPaid:    number;
+      amount:               number | null;
+      downpayment:          number | null;
+      rate:                 number | null;
+      years:                number | null;
+      totalInterestPaid:    number | null;
+      totalLoanPayment:     number | null;
+      interestRatio:        number | null;
       monthlyPayment:       Payment;
       annualPayment:        Payment;
+      formatted:            Formatted;
       amortizationSchedule: AmortizationSchedule[];
   }
   
   interface AmortizationSchedule {
-      month:            number;
-      interestPayment:  number;
-      principalPayment: number;
-      remainingBalance: number;
+      month:            number | null;
+      interestPayment:  number | null;
+      principalPayment: number | null;
+      remainingBalance: number | null;
   }
   
   interface Payment {
-      total:         number;
-      mortgage:      number;
-      propertyTax:   number;
-      hoa:           number;
-      homeInsurance: number;
+      total:         number | null;
+      mortgage:      number | null;
+      propertyTax:   number | null;
+      hoa:           number | null;
+      homeInsurance: number | null;
+  }
+  
+  interface Formatted {
+      amount:            null | string;
+      monthlyPayment:    null | string;
+      totalInterestPaid: null | string;
+      totalLoanPayment:  null | string;
   }
 
   export default class mortgagecalculatorWrapper {
