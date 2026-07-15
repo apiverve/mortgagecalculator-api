@@ -14,14 +14,22 @@ API_URL = 'https://api.apiverve.com/v1/mortgagecalculator'
 
 def call_mortgagecalculator_api():
     """
-    Make a GET request to the Mortgage Calculator API
+    Make a POST request to the Mortgage Calculator API
     """
     try:
+        # Request body
+        request_body &#x3D; {
+    &#x27;amount&#x27;: 570000,
+    &#x27;rate&#x27;: 6.8,
+    &#x27;years&#x27;: 30
+}
+
         headers = {
-            'x-api-key': API_KEY
+            'x-api-key': API_KEY,
+            'Content-Type': 'application/json'
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.post(API_URL, headers=headers, json=request_body)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
