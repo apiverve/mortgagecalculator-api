@@ -25,30 +25,42 @@ namespace APIVerve.API.MortgageCalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("amount")]
-        public long Amount { get; set; }
+        public long? Amount { get; set; }
 
         [JsonProperty("downpayment")]
-        public long Downpayment { get; set; }
+        public long? Downpayment { get; set; }
 
         [JsonProperty("rate")]
-        public double Rate { get; set; }
+        public double? Rate { get; set; }
 
         [JsonProperty("years")]
-        public long Years { get; set; }
+        public long? Years { get; set; }
 
         [JsonProperty("total_interest_paid")]
-        public double TotalInterestPaid { get; set; }
+        public double? TotalInterestPaid { get; set; }
+
+        [JsonProperty("total_loan_payment")]
+        public double? TotalLoanPayment { get; set; }
+
+        [JsonProperty("interestRatio")]
+        public double? InterestRatio { get; set; }
 
         [JsonProperty("monthly_payment")]
         public Payment MonthlyPayment { get; set; }
 
         [JsonProperty("annual_payment")]
         public Payment AnnualPayment { get; set; }
+
+        [JsonProperty("formatted")]
+        public Formatted Formatted { get; set; }
 
         [JsonProperty("amortization_schedule")]
         public AmortizationSchedule[] AmortizationSchedule { get; set; }
@@ -57,33 +69,60 @@ namespace APIVerve.API.MortgageCalculator
     public partial class AmortizationSchedule
     {
         [JsonProperty("month")]
-        public long Month { get; set; }
+        public long? Month { get; set; }
 
         [JsonProperty("interest_payment")]
-        public double InterestPayment { get; set; }
+        public double? InterestPayment { get; set; }
 
         [JsonProperty("principal_payment")]
-        public double PrincipalPayment { get; set; }
+        public double? PrincipalPayment { get; set; }
 
         [JsonProperty("remaining_balance")]
-        public double RemainingBalance { get; set; }
+        public double? RemainingBalance { get; set; }
     }
 
     public partial class Payment
     {
         [JsonProperty("total")]
-        public double Total { get; set; }
+        public double? Total { get; set; }
 
         [JsonProperty("mortgage")]
-        public double Mortgage { get; set; }
+        public double? Mortgage { get; set; }
 
         [JsonProperty("property_tax")]
-        public long PropertyTax { get; set; }
+        public long? PropertyTax { get; set; }
 
         [JsonProperty("hoa")]
-        public long Hoa { get; set; }
+        public long? Hoa { get; set; }
 
         [JsonProperty("home_insurance")]
-        public long HomeInsurance { get; set; }
+        public long? HomeInsurance { get; set; }
+    }
+
+    public partial class Formatted
+    {
+        [JsonProperty("amount")]
+        public string Amount { get; set; }
+
+        [JsonProperty("monthlyPayment")]
+        public string MonthlyPayment { get; set; }
+
+        [JsonProperty("totalInterestPaid")]
+        public string TotalInterestPaid { get; set; }
+
+        [JsonProperty("totalLoanPayment")]
+        public string TotalLoanPayment { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
