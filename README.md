@@ -1,13 +1,13 @@
-# [Mortgage Calculator API](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Mortgage Calculator API](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Mortgage Calculator is a simple tool for calculating mortgage payments. It returns the monthly payment, total interest, and more.
+Mortgage Calculator computes monthly and annual loan payments from principal, interest rate, and term. It breaks totals down by principal, interest, property tax, insurance, and HOA dues, with paid plans adding full amortization schedules.
 
 The Mortgage Calculator API provides a simple, reliable way to integrate mortgage calculator functionality into your applications. Built for developers who need production-ready mortgage calculator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -171,7 +171,7 @@ go get github.com/apiverve/mortgagecalculator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Mortgage Calculator API](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Mortgage Calculator API](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/mortgagecalculator](https://docs.apiverve.com/ref/mortgagecalculator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -201,11 +201,74 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Mortgage Calculator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "amount": 570000,
+    "downpayment": 0,
+    "rate": 6.8,
+    "years": 30,
+    "total_interest_paid": 767750.49,
+    "total_loan_payment": 1337750.49,
+    "interestRatio": 57.39,
+    "monthly_payment": {
+      "total": 3715.97,
+      "mortgage": 3715.97,
+      "property_tax": 0,
+      "hoa": 0,
+      "home_insurance": 0
+    },
+    "annual_payment": {
+      "total": 44591.68,
+      "mortgage": 44591.68,
+      "property_tax": 0,
+      "hoa": 0,
+      "home_insurance": 0
+    },
+    "formatted": {
+      "amount": "$570,000",
+      "monthlyPayment": "$3,715.97",
+      "totalInterestPaid": "$767,750.49",
+      "totalLoanPayment": "$1,337,750.49"
+    },
+    "amortization_schedule": [
+      {
+        "month": 1,
+        "interest_payment": 3230,
+        "principal_payment": 485.97,
+        "remaining_balance": 569514.03
+      },
+      {
+        "month": 2,
+        "interest_payment": 3227.25,
+        "principal_payment": 488.73,
+        "remaining_balance": 569025.3
+      },
+      {
+        "month": 3,
+        "interest_payment": 3224.48,
+        "principal_payment": 491.5,
+        "remaining_balance": 568533.8
+      }
+    ]
+  }
 }
 ```
 
@@ -213,7 +276,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Mortgage Calculator API](https://mortgagecalculator.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Mortgage Calculator API](https://apiverve.com/marketplace/mortgagecalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

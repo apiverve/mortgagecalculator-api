@@ -2,8 +2,10 @@ openapi: 3.0.4
 info:
   title: Mortgage Calculator
   description: >-
-    Mortgage Calculator is a simple tool for calculating mortgage payments. It
-    returns the monthly payment, total interest, and more.
+    Mortgage Calculator computes monthly and annual loan payments from
+    principal, interest rate, and term. It breaks totals down by principal,
+    interest, property tax, insurance, and HOA dues, with paid plans adding full
+    amortization schedules.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -18,7 +20,7 @@ servers:
 paths:
   /v1/mortgagecalculator:
     post:
-      summary: Calculate Mortgage
+      summary: Mortgage Calculator
       description: >-
         Calculate mortgage payments based on the loan amount, interest rate, and
         loan term
