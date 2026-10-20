@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/mortgagecalculator",
-  "version": "1.2.0",
-  "description": "Mortgage Calculator is a simple tool for calculating mortgage payments. It returns the monthly payment, total interest, and more.",
+  "version": "1.2.2",
+  "description": "Mortgage Calculator computes monthly and annual loan payments from principal, interest rate, and term. It breaks totals down by principal, interest, property tax, insurance, and HOA dues, with paid plans adding full amortization schedules.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "mortgage calculator", "mortgage", "mortgage payments", "mortgage calculator api", "mortgage api"
+    "mortgage calculator api", "mortgage api", "payment calculation api", "mortgage payment calculator api", "loan payment calculator api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/mortgagecalculator-api/issues"
   },
-  "homepage": "https://mortgagecalculator.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/mortgagecalculator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
