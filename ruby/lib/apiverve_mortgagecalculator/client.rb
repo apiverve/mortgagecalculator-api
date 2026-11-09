@@ -10,7 +10,7 @@ module APIVerve
     #
     # @example Basic usage
     #   client = APIVerve::Mortgagecalculator::Client.new(api_key: "your_api_key")
-    #   response = client.execute({ amount: 570000, rate: 6.8, years: 30 })
+    #   response = client.execute({ amount: 570000, rate: 6.8, years: 30, downpayment: 57000, pmi_rate: 0.5, extra_monthly: 200, start_date: "2026-11-01" })
     #   puts response
     #
     # @see https://apiverve.com/marketplace/mortgagecalculator?utm_source=ruby&utm_medium=referral&utm_content=readme
@@ -19,7 +19,7 @@ module APIVerve
       DEFAULT_TIMEOUT = 30
 
       # Validation rules for parameters
-      VALIDATION_RULES = { 'amount' => { type: 'number', required: true, min: 0 }, 'rate' => { type: 'number', required: true, min: 0, max: 100 }, 'years' => { type: 'integer', required: true, min: 1, max: 50 }, 'downpayment' => { type: 'number', required: false, min: 0 }, 'annual_propertytax' => { type: 'number', required: false, min: 0 }, 'annual_homeinsurance' => { type: 'number', required: false, min: 0 }, 'annual_hoa' => { type: 'number', required: false, min: 0 } }
+      VALIDATION_RULES = { 'amount' => { type: 'number', required: true, min: 0 }, 'rate' => { type: 'number', required: true, min: 0, max: 100 }, 'years' => { type: 'integer', required: true, min: 1, max: 50 }, 'downpayment' => { type: 'number', required: false, min: 0 }, 'annual_propertytax' => { type: 'number', required: false, min: 0 }, 'annual_homeinsurance' => { type: 'number', required: false, min: 0 }, 'annual_hoa' => { type: 'number', required: false, min: 0 }, 'pmi_rate' => { type: 'number', required: false, min: 0, max: 5 }, 'extra_monthly' => { type: 'number', required: false, min: 0 }, 'start_date' => { type: 'string', required: false, format: 'date' } }
 
       # Format validation patterns
       FORMAT_PATTERNS = {
