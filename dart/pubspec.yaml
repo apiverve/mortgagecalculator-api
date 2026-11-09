@@ -1,0 +1,16 @@
+name: apiverve_mortgagecalculator
+description: "Mortgage Calculator computes monthly and annual loan payments from principal, interest rate, and term. It breaks totals down by principal, interest, property tax, insurance, and HOA dues and returns the loan-to-value ratio, with paid plans adding full amortization schedules, PMI and its removal date, payoff dates, and extra-payment scenarios showing months and interest saved."
+version: 1.2.5
+homepage: https://apiverve.com/marketplace/mortgagecalculator?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/mortgagecalculator-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
