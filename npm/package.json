@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/mortgagecalculator",
-  "version": "1.2.4",
-  "description": "Mortgage Calculator computes monthly and annual loan payments from principal, interest rate, and term. It breaks totals down by principal, interest, property tax, insurance, and HOA dues, with paid plans adding full amortization schedules.",
+  "version": "1.2.5",
+  "description": "Mortgage Calculator computes monthly and annual loan payments from principal, interest rate, and term. It breaks totals down by principal, interest, property tax, insurance, and HOA dues and returns the loan-to-value ratio, with paid plans adding full amortization schedules, PMI and its removal date, payoff dates, and extra-payment scenarios showing months and interest saved.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,

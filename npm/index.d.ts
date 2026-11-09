@@ -35,6 +35,11 @@ declare module '@apiverve/mortgagecalculator' {
       monthlyPayment:       Payment;
       annualPayment:        Payment;
       formatted:            Formatted;
+      loanAmount:           number | null;
+      ltv:                  number | null;
+      payoffDate:           null | string;
+      pmi:                  Pmi;
+      extraPayments:        ExtraPayments;
       amortizationSchedule: AmortizationSchedule[];
   }
   
@@ -43,6 +48,7 @@ declare module '@apiverve/mortgagecalculator' {
       interestPayment:  number | null;
       principalPayment: number | null;
       remainingBalance: number | null;
+      date:             null | string;
   }
   
   interface Payment {
@@ -51,6 +57,16 @@ declare module '@apiverve/mortgagecalculator' {
       propertyTax:   number | null;
       hoa:           number | null;
       homeInsurance: number | null;
+      pmi:           number | null;
+  }
+  
+  interface ExtraPayments {
+      monthly:           number | null;
+      monthsToPayoff:    number | null;
+      monthsSaved:       number | null;
+      totalInterestPaid: number | null;
+      interestSaved:     number | null;
+      payoffDate:        null | string;
   }
   
   interface Formatted {
@@ -58,6 +74,16 @@ declare module '@apiverve/mortgagecalculator' {
       monthlyPayment:    null | string;
       totalInterestPaid: null | string;
       totalLoanPayment:  null | string;
+  }
+  
+  interface Pmi {
+      required:      boolean | null;
+      rate:          number | null;
+      monthly:       number | null;
+      monthsCharged: number | null;
+      removalMonth:  number | null;
+      total:         number | null;
+      removalDate:   null | string;
   }
 
   export default class mortgagecalculatorWrapper {

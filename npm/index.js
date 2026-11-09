@@ -30,7 +30,7 @@ class mortgagecalculatorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/mortgagecalculator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"amount":{"type":"number","required":true,"min":0},"rate":{"type":"number","required":true,"min":0,"max":100},"years":{"type":"integer","required":true,"min":1,"max":50},"downpayment":{"type":"number","required":false,"min":0},"annual_propertytax":{"type":"number","required":false,"min":0},"annual_homeinsurance":{"type":"number","required":false,"min":0},"annual_hoa":{"type":"number","required":false,"min":0}};
+        this.validationRules = {"amount":{"type":"number","required":true,"min":0},"rate":{"type":"number","required":true,"min":0,"max":100},"years":{"type":"integer","required":true,"min":1,"max":50},"downpayment":{"type":"number","required":false,"min":0},"annual_propertytax":{"type":"number","required":false,"min":0},"annual_homeinsurance":{"type":"number","required":false,"min":0},"annual_hoa":{"type":"number","required":false,"min":0},"pmi_rate":{"type":"number","required":false,"min":0,"max":5},"extra_monthly":{"type":"number","required":false,"min":0},"start_date":{"type":"string","required":false,"format":"date"}};
     }
 
     /**

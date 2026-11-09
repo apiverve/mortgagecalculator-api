@@ -17,7 +17,11 @@ const api = new mortgagecalculatorAPI({
 var query = {
   "amount": 570000,
   "rate": 6.8,
-  "years": 30
+  "years": 30,
+  "downpayment": 57000,
+  "pmi_rate": 0.5,
+  "extra_monthly": 200,
+  "start_date": "2026-11-01"
 };
 
 // Make the API request using callback
