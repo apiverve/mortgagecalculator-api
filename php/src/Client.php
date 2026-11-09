@@ -15,7 +15,7 @@ use APIVerve\Mortgagecalculator\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['amount' => 570000, 'rate' => 6.8, 'years' => 30]);
+ * $response = $client->execute(['amount' => 570000, 'rate' => 6.8, 'years' => 30, 'downpayment' => 57000, 'pmi_rate' => 0.5, 'extra_monthly' => 200, 'start_date' => '2026-11-01']);
  * print_r($response);
  * ```
  *
@@ -40,7 +40,10 @@ class Client
         'downpayment' => ['type' => 'number', 'required' => false, 'min' => 0],
         'annual_propertytax' => ['type' => 'number', 'required' => false, 'min' => 0],
         'annual_homeinsurance' => ['type' => 'number', 'required' => false, 'min' => 0],
-        'annual_hoa' => ['type' => 'number', 'required' => false, 'min' => 0]
+        'annual_hoa' => ['type' => 'number', 'required' => false, 'min' => 0],
+        'pmi_rate' => ['type' => 'number', 'required' => false, 'min' => 0, 'max' => 5],
+        'extra_monthly' => ['type' => 'number', 'required' => false, 'min' => 0],
+        'start_date' => ['type' => 'string', 'required' => false, 'format' => 'date']
     ];
 
     /**
