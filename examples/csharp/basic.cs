@@ -30,7 +30,7 @@ namespace APIVerve.Examples
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
                 // Request body
-                var requestBody &#x3D; new { amount &#x3D; 570000, rate &#x3D; 6.8, years &#x3D; 30 };
+                var requestBody &#x3D; new { amount &#x3D; 570000, rate &#x3D; 6.8, years &#x3D; 30, downpayment &#x3D; 57000, pmi_rate &#x3D; 0.5, extra_monthly &#x3D; 200, start_date &#x3D; &quot;2026-11-01&quot; };
 
                 var jsonContent = JsonSerializer.Serialize(requestBody);
                 var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");

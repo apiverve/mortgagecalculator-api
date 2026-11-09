@@ -17,7 +17,11 @@ async function callMortgageCalculatorAPI() {
     const requestBody &#x3D; {
     &quot;amount&quot;: 570000,
     &quot;rate&quot;: 6.8,
-    &quot;years&quot;: 30
+    &quot;years&quot;: 30,
+    &quot;downpayment&quot;: 57000,
+    &quot;pmi_rate&quot;: 0.5,
+    &quot;extra_monthly&quot;: 200,
+    &quot;start_date&quot;: &quot;2026-11-01&quot;
 };
 
     const response = await fetch(API_URL, {

@@ -21,7 +21,11 @@ def call_mortgagecalculator_api():
         request_body &#x3D; {
     &#x27;amount&#x27;: 570000,
     &#x27;rate&#x27;: 6.8,
-    &#x27;years&#x27;: 30
+    &#x27;years&#x27;: 30,
+    &#x27;downpayment&#x27;: 57000,
+    &#x27;pmi_rate&#x27;: 0.5,
+    &#x27;extra_monthly&#x27;: 200,
+    &#x27;start_date&#x27;: &#x27;2026-11-01&#x27;
 }
 
         headers = {

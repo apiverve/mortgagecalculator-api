@@ -17,6 +17,10 @@ public class BasicExample {
         parameters.put(&quot;amount&quot;, 570000);
         parameters.put(&quot;rate&quot;, 6.8);
         parameters.put(&quot;years&quot;, 30);
+        parameters.put(&quot;downpayment&quot;, 57000);
+        parameters.put(&quot;pmi_rate&quot;, 0.5);
+        parameters.put(&quot;extra_monthly&quot;, 200);
+        parameters.put(&quot;start_date&quot;, &quot;2026-11-01&quot;);
 
             // Execute the API request
             APIResponse response = client.execute(parameters);
