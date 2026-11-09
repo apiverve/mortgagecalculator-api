@@ -30,7 +30,10 @@ class MortgagecalculatorAPIClient:
         "downpayment": {"type": "number", "required": False, "min": 0},
         "annual_propertytax": {"type": "number", "required": False, "min": 0},
         "annual_homeinsurance": {"type": "number", "required": False, "min": 0},
-        "annual_hoa": {"type": "number", "required": False, "min": 0}
+        "annual_hoa": {"type": "number", "required": False, "min": 0},
+        "pmi_rate": {"type": "number", "required": False, "min": 0, "max": 5},
+        "extra_monthly": {"type": "number", "required": False, "min": 0},
+        "start_date": {"type": "string", "required": False, "format": "date"}
     }
 
     # Format validation patterns
