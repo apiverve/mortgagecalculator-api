@@ -51,5 +51,23 @@ namespace APIVerve.API.MortgageCalculator
         /// </summary>
         [JsonProperty("annual_hoa")]
         public double? Annual_hoa { get; set; }
+
+        /// <summary>
+        /// Annual private mortgage insurance rate as a percentage of the loan, charged only when the loan-to-value ratio is above 80%
+        /// </summary>
+        [JsonProperty("pmi_rate")]
+        public double? Pmi_rate { get; set; }
+
+        /// <summary>
+        /// Extra principal paid every month, to see how much sooner the loan is paid off and how much interest that saves
+        /// </summary>
+        [JsonProperty("extra_monthly")]
+        public double? Extra_monthly { get; set; }
+
+        /// <summary>
+        /// Loan start (closing) date; the first payment falls the following month
+        /// </summary>
+        [JsonProperty("start_date")]
+        public string Start_date { get; set; }
     }
 }

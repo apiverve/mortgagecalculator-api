@@ -73,7 +73,10 @@ namespace APIVerve.API.MortgageCalculator
             { "downpayment", new ValidationRule { Type = "number", Required = false, Min = 0 } },
             { "annual_propertytax", new ValidationRule { Type = "number", Required = false, Min = 0 } },
             { "annual_homeinsurance", new ValidationRule { Type = "number", Required = false, Min = 0 } },
-            { "annual_hoa", new ValidationRule { Type = "number", Required = false, Min = 0 } }
+            { "annual_hoa", new ValidationRule { Type = "number", Required = false, Min = 0 } },
+            { "pmi_rate", new ValidationRule { Type = "number", Required = false, Min = 0, Max = 5 } },
+            { "extra_monthly", new ValidationRule { Type = "number", Required = false, Min = 0 } },
+            { "start_date", new ValidationRule { Type = "string", Required = false, Format = "date" } }
         };
 
         /// <summary>Format validation patterns</summary>

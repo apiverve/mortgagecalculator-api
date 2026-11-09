@@ -62,6 +62,21 @@ namespace APIVerve.API.MortgageCalculator
         [JsonProperty("formatted")]
         public Formatted Formatted { get; set; }
 
+        [JsonProperty("loan_amount")]
+        public long? LoanAmount { get; set; }
+
+        [JsonProperty("ltv")]
+        public long? Ltv { get; set; }
+
+        [JsonProperty("payoff_date")]
+        public string PayoffDate { get; set; }
+
+        [JsonProperty("pmi")]
+        public Pmi Pmi { get; set; }
+
+        [JsonProperty("extra_payments")]
+        public ExtraPayments ExtraPayments { get; set; }
+
         [JsonProperty("amortization_schedule")]
         public AmortizationSchedule[] AmortizationSchedule { get; set; }
     }
@@ -79,6 +94,9 @@ namespace APIVerve.API.MortgageCalculator
 
         [JsonProperty("remaining_balance")]
         public double? RemainingBalance { get; set; }
+
+        [JsonProperty("date")]
+        public string Date { get; set; }
     }
 
     public partial class Payment
@@ -97,6 +115,30 @@ namespace APIVerve.API.MortgageCalculator
 
         [JsonProperty("home_insurance")]
         public long? HomeInsurance { get; set; }
+
+        [JsonProperty("pmi")]
+        public double? Pmi { get; set; }
+    }
+
+    public partial class ExtraPayments
+    {
+        [JsonProperty("monthly")]
+        public long? Monthly { get; set; }
+
+        [JsonProperty("months_to_payoff")]
+        public long? MonthsToPayoff { get; set; }
+
+        [JsonProperty("months_saved")]
+        public long? MonthsSaved { get; set; }
+
+        [JsonProperty("total_interest_paid")]
+        public double? TotalInterestPaid { get; set; }
+
+        [JsonProperty("interest_saved")]
+        public double? InterestSaved { get; set; }
+
+        [JsonProperty("payoff_date")]
+        public string PayoffDate { get; set; }
     }
 
     public partial class Formatted
@@ -112,6 +154,30 @@ namespace APIVerve.API.MortgageCalculator
 
         [JsonProperty("totalLoanPayment")]
         public string TotalLoanPayment { get; set; }
+    }
+
+    public partial class Pmi
+    {
+        [JsonProperty("required")]
+        public bool? PmiRequired { get; set; }
+
+        [JsonProperty("rate")]
+        public double? Rate { get; set; }
+
+        [JsonProperty("monthly")]
+        public double? Monthly { get; set; }
+
+        [JsonProperty("months_charged")]
+        public long? MonthsCharged { get; set; }
+
+        [JsonProperty("removal_month")]
+        public long? RemovalMonth { get; set; }
+
+        [JsonProperty("total")]
+        public double? Total { get; set; }
+
+        [JsonProperty("removal_date")]
+        public string RemovalDate { get; set; }
     }
 
     public partial class Premium

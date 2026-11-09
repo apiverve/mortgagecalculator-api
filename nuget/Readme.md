@@ -1,7 +1,7 @@
 Mortgage Calculator API
 ============
 
-Mortgage Calculator computes monthly and annual loan payments from principal, interest rate, and term. It breaks totals down by principal, interest, property tax, insurance, and HOA dues, with paid plans adding full amortization schedules.
+Mortgage Calculator computes monthly and annual loan payments from principal, interest rate, and term. It breaks totals down by principal, interest, property tax, insurance, and HOA dues and returns the loan-to-value ratio, with paid plans adding full amortization schedules, PMI and its removal date, payoff dates, and extra-payment scenarios showing months and interest saved.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.MortgageCalculator.svg)](https://www.nuget.org/packages/APIVerve.API.MortgageCalculator)
@@ -62,7 +62,11 @@ class Program
         var queryOptions = new MortgageCalculatorQueryOptions {
             Amount = 570000,
             Rate = 6.8,
-            Years = 30
+            Years = 30,
+            Downpayment = 57000,
+            Pmi_rate = 0.5,
+            Extra_monthly = 200,
+            Start_date = "2026-11-01"
         };
 
         // Make the API call
@@ -128,7 +132,11 @@ public class Example
         var queryOptions = new MortgageCalculatorQueryOptions {
             Amount = 570000,
             Rate = 6.8,
-            Years = 30
+            Years = 30,
+            Downpayment = 57000,
+            Pmi_rate = 0.5,
+            Extra_monthly = 200,
+            Start_date = "2026-11-01"
         };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -162,7 +170,11 @@ public class Example
         var queryOptions = new MortgageCalculatorQueryOptions {
             Amount = 570000,
             Rate = 6.8,
-            Years = 30
+            Years = 30,
+            Downpayment = 57000,
+            Pmi_rate = 0.5,
+            Extra_monthly = 200,
+            Start_date = "2026-11-01"
         };
 
         var response = apiClient.Execute(queryOptions);
@@ -201,7 +213,11 @@ public class Example
         var queryOptions = new MortgageCalculatorQueryOptions {
             Amount = 570000,
             Rate = 6.8,
-            Years = 30
+            Years = 30,
+            Downpayment = 57000,
+            Pmi_rate = 0.5,
+            Extra_monthly = 200,
+            Start_date = "2026-11-01"
         };
 
         try
@@ -259,7 +275,11 @@ public class Example
         var queryOptions = new MortgageCalculatorQueryOptions {
             Amount = 570000,
             Rate = 6.8,
-            Years = 30
+            Years = 30,
+            Downpayment = 57000,
+            Pmi_rate = 0.5,
+            Extra_monthly = 200,
+            Start_date = "2026-11-01"
         };
 
         try
@@ -302,7 +322,11 @@ apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 var queryOptions = new MortgageCalculatorQueryOptions {
     Amount = 570000,
     Rate = 6.8,
-    Years = 30
+    Years = 30,
+    Downpayment = 57000,
+    Pmi_rate = 0.5,
+    Extra_monthly = 200,
+    Start_date = "2026-11-01"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -330,7 +354,11 @@ apiClient.SetLogger(message =>
 var queryOptions = new MortgageCalculatorQueryOptions {
     Amount = 570000,
     Rate = 6.8,
-    Years = 30
+    Years = 30,
+    Downpayment = 57000,
+    Pmi_rate = 0.5,
+    Extra_monthly = 200,
+    Start_date = "2026-11-01"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -350,7 +378,11 @@ apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (defau
 var queryOptions = new MortgageCalculatorQueryOptions {
     Amount = 570000,
     Rate = 6.8,
-    Years = 30
+    Years = 30,
+    Downpayment = 57000,
+    Pmi_rate = 0.5,
+    Extra_monthly = 200,
+    Start_date = "2026-11-01"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -364,7 +396,11 @@ The API client implements `IDisposable` for proper resource cleanup:
 var queryOptions = new MortgageCalculatorQueryOptions {
     Amount = 570000,
     Rate = 6.8,
-    Years = 30
+    Years = 30,
+    Downpayment = 57000,
+    Pmi_rate = 0.5,
+    Extra_monthly = 200,
+    Start_date = "2026-11-01"
 };
 
 using (var apiClient = new MortgageCalculatorAPIClient("[YOUR_API_KEY]"))
@@ -385,50 +421,75 @@ using (var apiClient = new MortgageCalculatorAPIClient("[YOUR_API_KEY]"))
   "error": null,
   "data": {
     "amount": 570000,
-    "downpayment": 0,
+    "downpayment": 57000,
     "rate": 6.8,
     "years": 30,
-    "total_interest_paid": 767750.49,
-    "total_loan_payment": 1337750.49,
+    "total_interest_paid": 690975.44,
+    "total_loan_payment": 1203975.44,
     "interestRatio": 57.39,
     "monthly_payment": {
-      "total": 3715.97,
-      "mortgage": 3715.97,
+      "total": 3558.13,
+      "mortgage": 3344.38,
       "property_tax": 0,
       "hoa": 0,
-      "home_insurance": 0
+      "home_insurance": 0,
+      "pmi": 213.75
     },
     "annual_payment": {
-      "total": 44591.68,
-      "mortgage": 44591.68,
+      "total": 42697.51,
+      "mortgage": 40132.51,
       "property_tax": 0,
       "hoa": 0,
-      "home_insurance": 0
+      "home_insurance": 0,
+      "pmi": 2565
     },
     "formatted": {
       "amount": "$570,000",
-      "monthlyPayment": "$3,715.97",
-      "totalInterestPaid": "$767,750.49",
-      "totalLoanPayment": "$1,337,750.49"
+      "monthlyPayment": "$3,344.38",
+      "totalInterestPaid": "$690,975.44",
+      "totalLoanPayment": "$1,203,975.44"
+    },
+    "loan_amount": 513000,
+    "ltv": 90,
+    "payoff_date": "2056-11",
+    "pmi": {
+      "required": true,
+      "rate": 0.5,
+      "monthly": 213.75,
+      "months_charged": 113,
+      "removal_month": 114,
+      "total": 24153.75,
+      "removal_date": "2036-05"
+    },
+    "extra_payments": {
+      "monthly": 200,
+      "months_to_payoff": 304,
+      "months_saved": 56,
+      "total_interest_paid": 563208.85,
+      "interest_saved": 127766.58,
+      "payoff_date": "2052-03"
     },
     "amortization_schedule": [
       {
         "month": 1,
-        "interest_payment": 3230,
-        "principal_payment": 485.97,
-        "remaining_balance": 569514.03
+        "interest_payment": 2907,
+        "principal_payment": 437.38,
+        "remaining_balance": 512562.62,
+        "date": "2026-12"
       },
       {
         "month": 2,
-        "interest_payment": 3227.25,
-        "principal_payment": 488.73,
-        "remaining_balance": 569025.3
+        "interest_payment": 2904.52,
+        "principal_payment": 439.85,
+        "remaining_balance": 512122.77,
+        "date": "2027-01"
       },
       {
         "month": 3,
-        "interest_payment": 3224.48,
-        "principal_payment": 491.5,
-        "remaining_balance": 568533.8
+        "interest_payment": 2902.03,
+        "principal_payment": 442.35,
+        "remaining_balance": 511680.42,
+        "date": "2027-02"
       }
     ]
   }
