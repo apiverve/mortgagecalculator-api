@@ -24,7 +24,7 @@ class ValidationError(MortgagecalculatorAPIClientError):
 class MortgagecalculatorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "amount": {"type": "number", "required": True, "min": 0},
+        "amount": {"type": "number", "required": True, "min": 0, "max": 1000000000000},
         "rate": {"type": "number", "required": True, "min": 0, "max": 100},
         "years": {"type": "integer", "required": True, "min": 1, "max": 50},
         "downpayment": {"type": "number", "required": False, "min": 0},
