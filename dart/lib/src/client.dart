@@ -49,7 +49,7 @@ final _formatPatterns = {
 /// For more information, visit: https://apiverve.com/marketplace/mortgagecalculator?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
-/// * [amount] (required) - The loan amount [min: 0]
+/// * [amount] (required) - The loan amount (0 to 1,000,000,000,000) [min: 0, max: 1000000000000]
 /// * [rate] (required) - The interest rate (percentage) [min: 0, max: 100]
 /// * [years] (required) - The loan term in years [min: 1, max: 50]
 /// * [downpayment] - The down payment amount [min: 0]
@@ -66,7 +66,7 @@ class MortgagecalculatorClient {
 
   /// Validation rules for parameters.
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
-    'amount': ValidationRule(type: 'number', required: true, min: 0),
+    'amount': ValidationRule(type: 'number', required: true, min: 0, max: 1000000000000),
     'rate': ValidationRule(type: 'number', required: true, min: 0, max: 100),
     'years': ValidationRule(type: 'integer', required: true, min: 1, max: 50),
     'downpayment': ValidationRule(type: 'number', required: false, min: 0),
