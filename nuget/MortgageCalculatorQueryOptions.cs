@@ -11,7 +11,7 @@ namespace APIVerve.API.MortgageCalculator
     public class MortgageCalculatorQueryOptions
     {
         /// <summary>
-        /// The loan amount
+        /// The loan amount (0 to 1,000,000,000,000)
         /// </summary>
         [JsonProperty("amount")]
         public double Amount { get; set; }

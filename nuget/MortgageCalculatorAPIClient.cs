@@ -67,7 +67,7 @@ namespace APIVerve.API.MortgageCalculator
         /// <summary>Validation rules for parameters</summary>
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
-            { "amount", new ValidationRule { Type = "number", Required = true, Min = 0 } },
+            { "amount", new ValidationRule { Type = "number", Required = true, Min = 0, Max = 1000000000000 } },
             { "rate", new ValidationRule { Type = "number", Required = true, Min = 0, Max = 100 } },
             { "years", new ValidationRule { Type = "integer", Required = true, Min = 1, Max = 50 } },
             { "downpayment", new ValidationRule { Type = "number", Required = false, Min = 0 } },
